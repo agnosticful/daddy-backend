@@ -1,0 +1,33 @@
+{
+  "name": "daddy-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "built/main.js",
+  "scripts": {
+    "compile": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "micro-dev",
+    "start": "micro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agnosticful/daddy-backend.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agnosticful/daddy-backend/issues"
+  },
+  "homepage": "https://github.com/agnosticful/daddy-backend#readme",
+  "devDependencies": {
+    "@types/micro": "^7.3.3",
+    "@types/node": "^11.9.4",
+    "micro-dev": "^3.0.0",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "micro": "^9.3.3",
+    "microrouter": "^3.1.3"
+  }
+}
