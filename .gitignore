@@ -1,7 +1,7 @@
 
-// compiled file dir
+# compiled file dir
 built/
 
-// setting dir
+# setting dir
 node_modules/
 

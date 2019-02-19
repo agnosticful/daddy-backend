@@ -1,6 +1,6 @@
 {
   "name": "daddy-backend",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "main": "built/main.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/agnosticful/daddy-backend.git"
   },
   "author": "",
-  "license": "MIT",
+  "license": "",
   "bugs": {
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
