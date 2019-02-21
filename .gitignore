@@ -3,3 +3,6 @@ built/*
 
 # downloaded packages
 node_modules/*
+
+# editor configurations
+.vscode/*
