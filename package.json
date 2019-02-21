@@ -13,8 +13,7 @@
   },
   "scripts": {
     "start": "ts-node --transpile-only ./node_modules/micro/bin/micro.js -l tcp://0.0.0.0:$PORT ./src/main.ts",
-    "dev": "ts-node --transpile-only ./node_modules/micro-dev/bin/micro-dev.js -l tcp://0.0.0.0:$PORT ./src/main.ts",
-    "compile": "tsc --outDir ./built"
+    "dev": "ts-node --transpile-only ./node_modules/micro-dev/bin/micro-dev.js -l tcp://0.0.0.0:$PORT ./src/main.ts"
   },
   "dependencies": {
     "micro": "^9.3.3"

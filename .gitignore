@@ -1,6 +1,3 @@
-# compiled codes
-built/*
-
 # downloaded packages
 node_modules/*
 
