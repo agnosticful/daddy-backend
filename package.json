@@ -13,5 +13,8 @@
   },
   "scripts": {
     "compile": "tsc --outDir ./built"
+  },
+  "devDependencies": {
+    "typescript": "^3.3.3"
   }
 }
