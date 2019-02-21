@@ -4,10 +4,7 @@
   "description": "",
   "main": "built/main.js",
   "scripts": {
-    "compile": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "micro-dev",
-    "start": "micro"
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
@@ -19,13 +16,7 @@
   },
   "homepage": "https://github.com/agnosticful/daddy-backend#readme",
   "devDependencies": {
-    "@types/micro": "^7.3.3",
-    "@types/node": "^11.9.4",
-    "micro-dev": "^3.0.0",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.3"
   },
   "dependencies": {
-    "micro": "^9.3.3"
   }
 }
