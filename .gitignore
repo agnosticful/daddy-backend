@@ -1,7 +1,8 @@
+# compiled codes
+built/*
 
-# compiled file dir
-built/
+# downloaded packages
+node_modules/*
 
-# setting dir
-node_modules/
-
+# editor configurations
+.vscode/*
