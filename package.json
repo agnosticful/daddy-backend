@@ -14,9 +14,5 @@
   "bugs": {
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
-  "homepage": "https://github.com/agnosticful/daddy-backend#readme",
-  "devDependencies": {
-  },
-  "dependencies": {
-  }
+  "homepage": "https://github.com/agnosticful/daddy-backend#readme"
 }
