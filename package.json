@@ -2,16 +2,16 @@
   "name": "daddy-backend",
   "version": "0.0.0",
   "description": "",
-  "scripts": {
-    "compile": "tsc"
-  },
+  "author": "",
+  "homepage": "https://github.com/agnosticful/daddy-backend#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/agnosticful/daddy-backend.git"
   },
-  "author": "",
   "bugs": {
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
-  "homepage": "https://github.com/agnosticful/daddy-backend#readme"
+  "scripts": {
+    "compile": "tsc"
+  },
 }
