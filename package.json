@@ -12,9 +12,18 @@
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
   "scripts": {
+    "start": "ts-node --transpile-only ./node_modules/micro/bin/micro.js -l tcp://0.0.0.0:$PORT ./src/main.ts",
+    "dev": "ts-node --transpile-only ./node_modules/micro-dev/bin/micro-dev.js -l tcp://0.0.0.0:$PORT ./src/main.ts",
     "compile": "tsc --outDir ./built"
   },
+  "dependencies": {
+    "micro": "^9.3.3"
+  },
   "devDependencies": {
+    "@types/micro": "^7.3.3",
+    "@types/node": "^11.9.4",
+    "micro-dev": "^3.0.0",
+    "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
   }
 }
