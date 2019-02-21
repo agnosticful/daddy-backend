@@ -1,7 +1,5 @@
+# compiled codes
+built/*
 
-# compiled file dir
-built/
-
-# setting dir
-node_modules/
-
+# downloaded packages
+node_modules/*
