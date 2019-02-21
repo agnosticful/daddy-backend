@@ -12,6 +12,6 @@
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
   "scripts": {
-    "compile": "tsc"
-  },
+    "compile": "tsc --outDir ./built"
+  }
 }
