@@ -1,0 +1,56 @@
+version: 2
+jobs:
+  checkout:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm i --ci
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Build
+          command: npm run compile
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - .
+  deploy:
+    docker:
+      - image: google/cloud-sdk
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate to Google Cloud Platform
+          command: gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}
+      - run:
+          name: Deploy
+          command: gcloud app deploy --project=${GCLOUD_PROJECT_ID}
+workflows:
+  version: 2
+  default:
+    jobs:
+      - checkout
+      - build:
+          requires:
+            - checkout
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
