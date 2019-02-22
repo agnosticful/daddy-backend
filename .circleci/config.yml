@@ -36,7 +36,7 @@ jobs:
           at: ~/repo
       - run:
           name: Authenticate to Google Cloud Platform
-          command: gcloud auth activate-service-account --key-file=${GCLOUD_SERVICE_KEY}
+          command: echo $GCLOUD_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
       - run:
           name: Deploy
           command: gcloud app deploy --project=${GCLOUD_PROJECT_ID}
