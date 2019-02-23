@@ -12,7 +12,8 @@
     "url": "https://github.com/agnosticful/daddy-backend/issues"
   },
   "scripts": {
-    "start": "ts-node --transpile-only ./node_modules/micro/bin/micro.js -l tcp://0.0.0.0:$PORT ./src/main.ts",
+    "compile": "rimraf built/* && tsc --outDir ./built",
+    "start": "micro -l tcp://0.0.0.0:$PORT ./built/main.js",
     "dev": "ts-node --transpile-only ./node_modules/micro-dev/bin/micro-dev.js -l tcp://0.0.0.0:$PORT ./src/main.ts"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "@types/micro": "^7.3.3",
     "@types/node": "^11.9.4",
     "micro-dev": "^3.0.0",
+    "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
     "typescript": "^3.3.3"
   }
