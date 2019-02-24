@@ -13,6 +13,16 @@ jobs:
           root: ~/repo
           paths:
             - .
+  test:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Test
+          command: npm test -- --ci
   build:
     docker:
       - image: circleci/node:10
@@ -45,9 +55,13 @@ workflows:
   default:
     jobs:
       - checkout
+      - test:
+          requires:
+            - checkout
       - build:
           requires:
             - checkout
       - deploy:
           requires:
+            - test
             - build
