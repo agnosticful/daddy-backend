@@ -45,10 +45,9 @@ async function main(request: IncomingMessage, response: ServerResponse) {
     });
   }
 
-  if (request.method === "GET" && pathname ==="/graphql") {
+  if (request.method === "GET" && pathname === "/graphql") {
     if (searchParams.has("query")) {
       const query = searchParams.get("query")!;
-
       return graphql(schema, query, root);
     }
   }
