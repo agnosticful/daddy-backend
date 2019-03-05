@@ -18,7 +18,11 @@
     "dev": "ts-node --transpile-only ./node_modules/micro-dev/bin/micro-dev.js -l tcp://0.0.0.0:$PORT ./src/main.ts"
   },
   "dependencies": {
-    "micro": "^9.3.3"
+    "@types/graphql": "^14.0.7",
+    "graphql": "^14.1.1",
+    "http": "0.0.0",
+    "micro": "^9.3.3",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@types/got": "^9.4.0",
