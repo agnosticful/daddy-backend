@@ -21,8 +21,7 @@
     "@types/graphql": "^14.0.7",
     "graphql": "^14.1.1",
     "http": "0.0.0",
-    "micro": "^9.3.3",
-    "url": "^0.11.0"
+    "micro": "^9.3.3"
   },
   "devDependencies": {
     "@types/got": "^9.4.0",
