@@ -15,8 +15,6 @@ const root = {
   },
 };
 
-const whoami = process.env.DADDY_WHOAMI || "unknown";
-
 async function main(request: IncomingMessage, response: ServerResponse) {
   const pathname = request.url!.split("?")[0];
   const searchParams = new URLSearchParams(
@@ -25,12 +23,10 @@ async function main(request: IncomingMessage, response: ServerResponse) {
       : ""
   );
 
-  if (request.method === "GET" && pathname === "/graphql") {
-    if (searchParams.has("query")) {
-      const query = searchParams.get("query")!;
+  if (request.method === "GET" && pathname === "/graphql" && searchParams.has("query")) {
+    const query = searchParams.get("query")!;
 
-      return graphql(schema, query, root);
-    }
+    return graphql(schema, query, root);
   }
 
   return send(response, 404, {
