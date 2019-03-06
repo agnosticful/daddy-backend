@@ -25,29 +25,10 @@ async function main(request: IncomingMessage, response: ServerResponse) {
       : ""
   );
 
-  if (request.method === "GET" && pathname === "/") {
-    if (searchParams.has("message")) {
-      return send(response, 200, {
-        data: { hello: searchParams.get("message")! },
-        errors: []
-      });
-    } else {
-      response.setHeader("location", "/?message=world");
-
-      return send(response, 302);
-    }
-  }
-
-  if (request.method === "GET" && pathname === "/about") {
-    return send(response, 200, {
-      data: { whoami },
-      errors: []
-    });
-  }
-
   if (request.method === "GET" && pathname === "/graphql") {
     if (searchParams.has("query")) {
       const query = searchParams.get("query")!;
+
       return graphql(schema, query, root);
     }
   }
