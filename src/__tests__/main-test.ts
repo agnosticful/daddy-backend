@@ -15,5 +15,6 @@ describe("GET /graphql", () => {
     expect(JSON.parse(response.body)).toEqual({
       data: { "hello": "Hello world!"}
     });
+    server.close();
   });
 });
