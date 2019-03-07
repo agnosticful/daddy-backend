@@ -1,8 +1,19 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { send } from "micro";
 import { URLSearchParams } from "url";
+import { graphql, buildSchema } from "graphql";
 
-const whoami = process.env.DADDY_WHOAMI || "unknown";
+const schema = buildSchema(`
+  type Query {
+    hello: String
+  }
+`);
+
+const root = {
+  hello: () => {
+    return 'Hello world!';
+  },
+};
 
 async function main(request: IncomingMessage, response: ServerResponse) {
   const pathname = request.url!.split("?")[0];
@@ -12,24 +23,10 @@ async function main(request: IncomingMessage, response: ServerResponse) {
       : ""
   );
 
-  if (request.method === "GET" && pathname === "/") {
-    if (searchParams.has("message")) {
-      return send(response, 200, {
-        data: { hello: searchParams.get("message")! },
-        errors: []
-      });
-    } else {
-      response.setHeader("location", "/?message=world");
+  if (request.method === "GET" && pathname === "/graphql" && searchParams.has("query")) {
+    const query = searchParams.get("query")!;
 
-      return send(response, 302);
-    }
-  }
-
-  if (request.method === "GET" && pathname === "/about") {
-    return send(response, 200, {
-      data: { whoami },
-      errors: []
-    });
+    return graphql(schema, query, root);
   }
 
   return send(response, 404, {
